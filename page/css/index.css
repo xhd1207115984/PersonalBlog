@@ -1,0 +1,132 @@
+.every_day {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #e3e3e3;
+    background-color: #CCD6CC;
+    border-radius: 5px;
+    box-shadow: 3px 4px 5px  rgba(0, 0, 0, 0.5),
+        inset 0px 0px  8px rgba(0, 0, 0, 0.8);
+    
+}
+
+.every_day > span {
+    font-size: 14px;
+    display: block;
+    font-weight: 300;
+    text-shadow: 1px  1px  0 rgba(255, 255,255,0.5);
+}
+.every_day > p {
+    margin-top: 5px;
+    text-shadow: 1px  1px  0 rgba(255, 255,255,0.5);
+}
+.every_day > div {
+    margin-top: 5px;
+}
+.every_day > div > p {
+    float: left;
+    width: 100%;
+    text-shadow: 1px  1px  0 rgba(255, 255,255,0.5);
+}
+.every_day > div > div.name {
+    float: right;
+}
+.every_day::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.article_list {
+    margin-top: 20px;
+    text-align: left;
+}
+.article_list .article {
+    width: 100%;
+    background-color: #ededed;
+    border-radius: 8px;
+    box-shadow: 5px 4px 5px  rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+.article_list .article .article_top {
+    padding: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.article_list .article .article_top > a {
+    display: block;
+    text-decoration: none;
+    color: #9c8a66;
+    font-size: 18px;
+    cursor: pointer;
+}
+.article_list .article .article_top > p {
+    font-size: 12px;
+    color: #333;
+    margin-top: 12px;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.article_list .article .article_top > a:hover{
+    color:lightcoral;
+}
+
+.article_list .article .article_btm {
+    background-color: #898A66;
+    padding: 5px;
+    height: 20px;
+    border-radius: 0px 0px 8px 8px;
+}
+.article_list .article .article_btm >span {
+    color: #F5F5F5;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 10px;
+}
+.article_list .article .article_btm span.tag {
+    color:#E9E6B9;
+}
+
+.pageTools {
+    margin-top: 20px;
+    display: inline-block;
+}
+.pageTools ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.pageTools ul > li {
+    float: left;
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+    line-height: 30px;
+    
+    background-color: #BCD2A3;
+}
+.pageTools ul > li > span {
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+}
+.pageTools ul > li > span.selectOn {
+    background-color: #F8BE6A;
+}
+.pageTools ul > li:hover {
+    cursor: pointer;
+    background-color: #F8BE6A;
+}

@@ -1,0 +1,141 @@
+#articleDetail {
+    padding: 20px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #FFFFFF;
+    width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+#articleDetail>span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#article_content {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#article_content p {
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+
+#blogComment {
+    margin-top: 50px;
+    text-align: left;
+    border-radius: 5px;
+    
+}
+
+#blogComment .edit_comment {
+    box-sizing: border-box;
+    padding: 15px 20px 20px 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #FFFFFF;
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0px auto 0px auto;
+}
+#blogComment .edit_comment  h4 {
+    font-size: 18px;
+    margin: 0px 0px 20px 0px ;
+}
+
+#blogComment .edit_comment  input {
+    width: 30%;
+    height: 30px;
+    font-size: 20px;
+    padding: 3px 10px 3px 10px;
+    border-radius: 5px;
+    margin: 0px 20px 15px 0px;
+}
+#blogComment .edit_comment  textarea {
+    width: 75%;
+    height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: block;
+    border: 1px solid #1e88e5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+#blogComment .edit_comment  button {
+    display: block;
+    height: 40px;
+    width: 10%;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1e88e5;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}
+#blogComment > p {
+    margin-top: 30px;
+}
+#blogComment >ul >li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #d9edf7;
+    border: 1px dashed #7ca4c1 ;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 0px 10px 10px;
+    border-radius: 5px;
+    position: relative;
+}
+#blogComment >ul >li  img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50%;
+}
+#blogComment ul li .imgBottom {
+    display: inline-block;
+    margin: 18px 0px 0px 60px;
+}
+
+#blogComment ul li p {
+    margin: 20px 0px 0px 0px;
+}
+
+
+
+textarea::-webkit-input-placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+textarea::-moz-placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+textarea::-ms-input-placeholder {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#blogComment .edit_comment input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#blogComment .edit_comment input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#blogComment .edit_comment input::-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#blogComment .edit_comment input::-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(0, 0, 0, 0.5);
+}

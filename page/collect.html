@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to my blog</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/collect.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="./js1/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_wrapper">
+            <a href="/">菜的睡不着</a>
+            <span class="iconfont">&#xe662;</span>
+            <ul class="list" id="search">
+                <li><a href="/" class="iconfont">&#xe635; 首页</a></li>
+                <li><a  href="/map.html" class="iconfont" >&#xe62c; 文档</a></li>
+                <li><a href="/collect.html" class="iconfont active" >&#xe629; 收藏</a></li>
+                <li><a href="/about.html" class="iconfont" >&#xe653; 关于</a></li>
+                <li class="search"><input  type="text" placeholder="搜索" v-model="searchContent"  @keyup.enter="sendSearch"><span class="iconfont" v-on:click="sendSearch">&#xe718;</span></li>
+            </ul>
+            <nav class="side" id="side">
+                <span class="iconfont" @click="change">&#xe662;</span>
+                <div :class="{active: select}">
+                    <a href="/">首页</a>
+                    <a href="/map.html">文档</a>
+                    <a href="/collect.html"> 收藏</a>
+                    <a href="/about.html" >关于</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content_left">
+            <div class="bookmark">
+                <p>我的收藏夹</p>
+                <ul class="collect_list">
+                    <li class="collect">
+                        <span class="iconfont">&#xe613;</span>
+                        <p>常用网站</p>
+                        <ul class="collect_con">
+                            <li> <span class="iconfont">&#xe750;</span>
+                                <span>博客园: <a href="https://www.cnblogs.com/" target="_blank">https://www.cnblogs.com/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>掘金: <a href="https://juejin.im/" target="_blank">https://juejin.im/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>力扣: <a href="https://leetcode-cn.com/" target="_blank">https://leetcode-cn.com/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>在线工具: <a href="http://tool.oschina.net/" target="_blank">http://tool.oschina.net/</a></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="collect">
+                        <span class="iconfont">&#xe613;</span>
+                        <p>技术手册</p>
+                        <ul class="collect_con">
+                            <li> <span class="iconfont">&#xe750;</span>
+                                <span>MDN: <a href="https://developer.mozilla.org/zh-CN/" target="_blank">https://developer.mozilla.org/zh-CN/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>w3school: <a href="https://www.w3school.com.cn/" target="_blank">https://www.w3school.com.cn/</a></span>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="collect">
+                        <span class="iconfont">&#xe613;</span>
+                        <p>大神博客</p>
+                        <ul class="collect_con">
+                            <li> <span class="iconfont">&#xe750;</span>
+                                <span>阮一峰的博客: <a href="http://www.ruanyifeng.com/blog/" target="_blank">http://www.ruanyifeng.com/blog/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>易墨's_Blog: <a href="http://www.yimo.link/" target="_blank">http://www.yimo.link/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>coderxio: <a href="http://coderxio.cyuhang.cn/docs/theme-reco/" target="_blank">http://coderxio.cyuhang.cn/docs/theme-reco/</a></span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="collect">
+                        <span class="iconfont">&#xe613;</span>
+                        <p>各种工具</p>
+                        <ul class="collect_con">
+                            <li> <span class="iconfont">&#xe750;</span>
+                                <span>Github: <a href="https://github.com" target="_blank">https://www.cnblogs.com/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>在线二维码生成器: <a href="https://jiema.wwei.cn/" target="_blank">https://jiema.wwei.cn/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>在线扣图工具: <a href="http://www.asqql.com/gifrebg/" target="_blank">http://www.asqql.com/gifrebg/</a></span>
+                            </li>
+                            <li><span class="iconfont">&#xe750;</span>
+                                <span>在线工具: <a href="http://tool.oschina.net/" target="_blank">http://tool.oschina.net/</a></span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="tag_map" id="tagMap">
+                <div class="title">随机标签</div>
+                <a :href="tag.url" v-for = "(tag,index) in tags" :key="index" :style="{color:randomColor(), fontSize:randomSize()}">{{tag.name}}</a>
+            </div>
+            <div class="hot_article" id="hotArticle">
+                <div class="title">热门文章</div>
+                <ul>
+                    <li v-for="(temp,index) in titleList" :key="index"><a :href="temp.url">{{ temp.title}}</a></li>
+                </ul>
+            </div>
+            <div class="new_commit" id="newCommit">
+                <div class="title">最近评论</div>
+                <ul class="commit_list">
+                    <li class="commit_content" v-for="(item, index) in commitList" :key="index">
+                        <div>
+                            <p>{{ item.name }}</p>
+                            <span>{{ item.time }}</span>
+                        </div>
+                        <p>{{ item.data }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="toTop" v-show="show == true">
+        <span :class="{active: jump == true}" @click="up">TOP</span>
+    </div>
+    <footer class="footer">
+        <span class="note">徐浩东的博客</span>
+    </footer>
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js1/base.js"></script>
+</body>
+
+</html>

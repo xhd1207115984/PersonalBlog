@@ -1,0 +1,29 @@
+.study_title {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 40px;
+    box-shadow: 0 0 0 1px #5F5A4B, 1px 1px 6px 1px rgba(10,10,0,0.5);
+    color: #FFFFFF;
+    text-shadow: 2px 2px 3px #222222;
+    background: rgba(49, 56, 61, 0.5);
+}
+#blogs {
+    list-style: none;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+}
+#blogs > li {
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#blogs > li > a:hover {
+    background-color:rgba(185, 227, 217);
+    color: #FFFFFF;
+}

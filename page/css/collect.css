@@ -1,0 +1,95 @@
+.bookmark {
+    text-align: left;
+    background-color: #FFFFFF;
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+}
+
+.bookmark > p {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: left;
+    padding: 5px 0px 0px 5px;
+    font-weight: normal;
+}
+
+.bookmark .collect_list {
+    
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.bookmark .collect_list::before {
+    content: "";
+    height: 100%;
+    width: 4px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: 36px;
+    z-index: 1;
+}
+
+
+.bookmark .collect_list .collect {
+    list-style: none;
+    height: 180px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    margin-left: 70px;
+    position: relative;
+}
+.bookmark .collect_list .collect > span {
+    position: absolute;
+    color: #4caf98;
+    left: -42px;
+    font-size: 18px;
+    top: 18px;
+    z-index: 99;
+}
+.bookmark .collect_list .collect > span::before {
+    display: inline-block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color:#F5F5F5;
+    border-radius: 50%;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: -1;
+   
+}
+.bookmark .collect_list .collect > p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bookmark .collect_list .collect .collect_con {
+    list-style: none;
+}
+.bookmark .collect_list .collect .collect_con li {
+    margin-left: 10px;
+}
+.bookmark .collect_list .collect .collect_con li span.iconfont{
+    color: #4caf98;
+    font-size: 12px;
+}
+.bookmark .collect_list .collect .collect_con > span {
+    color: #333;
+    font-size: 14px;
+}
+.bookmark .collect_list .collect .collect_con span > a {
+    color: #333;
+    font-size: 14px;
+}
+.bookmark .collect_list .collect .collect_con span > a:hover {
+    color: chartreuse;
+}
+

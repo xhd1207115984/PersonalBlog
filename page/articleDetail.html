@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to my blog</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/articeDetail.css">
+    <script src="./js1/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_wrapper">
+            <a href="/">菜的睡不着</a>
+            <span class="iconfont">&#xe662;</span>
+            <ul class="list" id="search">
+                <li><a href="/" class="iconfont">&#xe635; 首页</a></li>
+                <li><a  href="/map.html" class="iconfont" >&#xe62c; 文档</a></li>
+                <li><a href="/collect.html" class="iconfont" >&#xe629; 收藏</a></li>
+                <li><a href="/about.html" class="iconfont" >&#xe653; 关于</a></li>
+                <li class="search"><input  type="text" placeholder="搜索" v-model="searchContent"  @keyup.enter="sendSearch"><span class="iconfont" v-on:click="sendSearch">&#xe718;</span></li>
+            </ul>
+            <nav class="side" id="side">
+                <span class="iconfont" @click="change">&#xe662;</span>
+                <div :class="{active: select}">
+                    <a href="/">首页</a>
+                    <a href="/map.html">文档</a>
+                    <a href="/collect.html"> 收藏</a>
+                    <a href="/about.html" >关于</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content_left">
+            <div id="articleDetail">
+                <h1>{{ content.title }}</h1>
+                <span>发布于:{{ content.ctime }}| 浏览({{ content.views}})</span>
+                <div id="article_content" v-html="content.content"></div>
+            </div>
+            <div id="blogComment">
+                <div class="edit_comment">
+                    <h4 id="addComment">发表评论</h4>
+                    <input type="hidden" id="commentId">
+                    <input type="text" placeholder="昵称" id="title" v-model="name"/>
+                    <input type="text" placeholder="email" id="tags" v-model="email"/>
+                    <textarea id="content" placeholder="无意义的问题我可能不会回复你哦" v-model="comment"></textarea>
+                    <input type="text"  placeholder="请在这里输入验证码" v-model="inputRandomCode"><span v-html="randomSvg" v-on:click="changeCode"></span>
+                    <button @click="sendComment">提交留言</button>
+                </div>
+                <p v-if="commentList.length != 0">最新评论</p>
+                <ul>
+                    <li v-for="(key,index) in commentList" :key="index">
+                        <img :src="randomImg(5)" alt="">
+                        <div class="imgBottom">
+                            <span>{{key.user_name}}: 发表于{{key.ctime}}<a href="#addComment" @click="huifu(key.id)">[回复]</a></span>
+                            <p>{{key.comments}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="tag_map" id="tagMap">
+                <div class="title">随机标签</div>
+                <a :href="tag.url" v-for = "(tag,index) in tags" :key="index" :style="{color:randomColor(), fontSize:randomSize()}">{{tag.name}}</a>
+            </div>
+            <div class="hot_article" id="hotArticle">
+                <div class="title">热门文章</div>
+                <ul>
+                    <li v-for="(temp,index) in titleList" :key="index"><a :href="temp.url">{{ temp.title}}</a></li>
+                </ul>
+            </div>
+            <div class="new_commit" id="newCommit">
+                <div class="title">最近评论</div>
+                <ul class="commit_list">
+                    <li class="commit_content" v-for="(item, index) in commitList" :key="index">
+                        <div>
+                            <p>{{ item.name }}</p>
+                            <span>{{ item.time }}</span>
+                        </div>
+                        <p>{{ item.data }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="toTop" v-show="show == true">
+        <span :class="{active: jump == true}" @click="up">TOP</span>
+    </div>
+    <footer class="footer">
+        <span class="note">徐浩东的博客</span>
+    </footer>
+    
+    <script src="./js1/articleDetail.js"></script>
+    <script src="./js1/base.js"></script>
+</body>
+</html>
